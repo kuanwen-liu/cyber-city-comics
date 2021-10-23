@@ -68,7 +68,7 @@ const Card = () => {
 
   if (comicData) {
     content = (
-      <React.Fragment>
+      <div className='card'>
         <CardDetail comicData={comicData} createdDate={createdDate} />
 
         <div className="btn-container">
@@ -92,7 +92,7 @@ const Card = () => {
             </Button>
           )}
         </div>
-      </React.Fragment>
+      </div >
     );
   }
 

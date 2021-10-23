@@ -6,6 +6,7 @@ import Comic from "./pages/comic";
 import ComicContext from "./store/comicContext";
 import Header from "./components/header/header.component";
 import About from "./pages/about";
+import Footer from "./components/footer/footer.component";
 
 const App = () => {
   const comicCtx = useContext(ComicContext);
@@ -44,6 +45,7 @@ const App = () => {
           <Comic />
         </Route>
       </div>
+      <Footer />
     </React.Fragment>
   );
 };

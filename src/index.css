@@ -20,5 +20,12 @@ code {
 }
 
 .container {
-  margin: 20px 7%;
+  margin: 20px 7% 0;
+  padding-bottom: 70px;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 70px;
 }
