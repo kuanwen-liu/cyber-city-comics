@@ -24,7 +24,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li className="navigation__item">
-            <Link to="/" className="navigation__link">
+            <Link to="/about" className="navigation__link">
               About Us
             </Link>
           </li>

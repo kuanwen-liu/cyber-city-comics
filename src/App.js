@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Comic from "./pages/comic";
 import ComicContext from "./store/comicContext";
 import Header from "./components/header/header.component";
+import About from "./pages/about";
 
 const App = () => {
   const comicCtx = useContext(ComicContext);
@@ -36,7 +37,9 @@ const App = () => {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/about"></Route>
+        <Route path="/about">
+          <About />
+        </Route>
         <Route path="/comicnumber/:comicnumber">
           <Comic />
         </Route>

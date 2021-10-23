@@ -1,0 +1,21 @@
+.about {
+  text-align: center;
+  margin: 2rem 5rem;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-container div img {
+  margin-bottom: 1rem;
+}
+
+.about-container div {
+  margin: 1rem;
+}
+
+.about-container div h3 {
+  line-height: 2rem;
+}
