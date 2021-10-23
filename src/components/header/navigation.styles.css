@@ -1,0 +1,155 @@
+.navigation .navigation__checkbox {
+  display: none;
+}
+
+.navigation .navigation__button {
+  background-color: #fff;
+  height: 4.5rem;
+  width: 4.5rem;
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 1rem 3rem rgba(#000, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.navigation .navigation__background {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 3.5rem;
+  right: 3.5rem;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  z-index: 5;
+
+  transition: transform 0.5s ease-out;
+}
+
+.navigation .navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8;
+
+  opacity: 0;
+  width: 0;
+  transition: all 0.5s;
+}
+
+.navigation .navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.navigation .navigation__item {
+  margin: 1rem;
+}
+
+.navigation .navigation__link:link,
+.navigation .navigation__link:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    #fff 50%
+  );
+  background-size: 250%;
+
+  transition: all 0.4s;
+}
+
+.navigation .navigation__link:hover,
+.navigation .navigation__link:active {
+  background-position: 100%;
+  color: #55c57a;
+  transform: translateX(0.5rem);
+}
+
+/* FUNCTIONALITY Checked the checkbox to open the navigation */
+.navigation .navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+
+.navigation .navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
+}
+
+/* ICON */
+.navigation .navigation__icon {
+  position: relative;
+  margin-top: 2.2rem;
+}
+
+.navigation .navigation__icon,
+.navigation .navigation__icon::before,
+.navigation .navigation__icon::after {
+  width: 2rem;
+  height: 2px;
+  background-color: #333;
+  display: inline-block;
+}
+
+.navigation .navigation__icon::before,
+.navigation .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.navigation .navigation__icon::before {
+  top: -0.6rem;
+}
+
+.navigation .navigation__icon::after {
+  top: 0.6rem;
+}
+
+.navigation .navigation__button:hover .navigation__icon::before {
+  top: -0.7rem;
+}
+
+.navigation .navigation__button:hover .navigation__icon::after {
+  top: 0.7rem;
+}
+
+.navigation
+  .navigation__checkbox:checked
+  + .navigation__button
+  .navigation__icon {
+  background-color: transparent;
+}
+
+.navigation
+  .navigation__checkbox:checked
+  + .navigation__button
+  .navigation__icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.navigation
+  .navigation__checkbox:checked
+  + .navigation__button
+  .navigation__icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}

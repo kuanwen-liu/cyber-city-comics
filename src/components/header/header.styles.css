@@ -1,0 +1,23 @@
+.header {
+  margin: 30px;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo div {
+  margin: 0 auto;
+}
+
+.logo h1 {
+  margin-left: -10rem;
+  font-family: "Bigelow Rules";
+  font-size: 60px;
+  color: #0ccac4;
+}
+
+.logo img {
+  width: 10rem;
+  height: 10rem;
+}
