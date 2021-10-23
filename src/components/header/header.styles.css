@@ -1,5 +1,5 @@
 .header {
-  margin: 30px;
+  margin: 20px;
 }
 
 .logo {
@@ -20,4 +20,10 @@
 .logo img {
   width: 10rem;
   height: 10rem;
+}
+
+@media (max-width: 650px) {
+  .logo h1 {
+    visibility: hidden;
+  }
 }

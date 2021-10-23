@@ -5,6 +5,8 @@ import ComicContext from "../../store/comicContext";
 import CardDetail from "./card-detail.component";
 import Spinner from "../spinner/spinner.component";
 
+import "./card.styles.css";
+
 const Card = () => {
   // Access Comic Context
   const comicCtx = useContext(ComicContext);

@@ -1,0 +1,17 @@
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 650px) {
+  .btn-container {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn {
+    margin-bottom: 25px;
+    width: 50%;
+  }
+}

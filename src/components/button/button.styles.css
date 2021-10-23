@@ -40,3 +40,9 @@
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
+
+@media (max-width: 650px) {
+  .btn {
+    width: 100%;
+  }
+}

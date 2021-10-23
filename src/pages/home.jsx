@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, useCallback } from "react";
 
-import "./home.css";
 import Card from "../components/card/card.component";
 import ComicContext from "../store/comicContext";
 
