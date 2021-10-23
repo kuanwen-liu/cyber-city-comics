@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 
 import Button from "../button/button.component";
 import ComicContext from "../../store/comicContext";
-import "./card.styles.css";
 import CardDetail from "./card-detail.component";
 import Spinner from "../spinner/spinner.component";
 
@@ -14,6 +13,7 @@ const Card = () => {
   const [isLatestComic, setIsLatestComic] = useState(true);
   const [comicData, setComicData] = useState();
   const [createdDate, setCreatedDate] = useState();
+  const [randomNumber, setRandomNumber] = useState();
 
   const nextPageHandler = () => {
     comicCtx.nextComic();
@@ -22,6 +22,16 @@ const Card = () => {
   const prevPageHandler = () => {
     comicCtx.prevComic();
   };
+
+  // Random number function with useCallback hook
+  const randomNumberHandler = useCallback(() => {
+    // get the random decimal number between 0 and latest number - 1
+    const random = Math.random() * latestComicNumber;
+
+    // get integer number and + 1. make sure not to get 0
+    const truncNumber = Math.trunc(random) + 1;
+    setRandomNumber(truncNumber);
+  }, [latestComicNumber]);
 
   // A function to format the date
   const formatDate = (data) => {
@@ -54,6 +64,9 @@ const Card = () => {
           const data = await response.json();
           setComicData(data);
           formatDate(data);
+
+          // When the page is randing will get a new random number immediately
+          randomNumberHandler();
         }
       } catch (err) {
         console.log(err);
@@ -61,14 +74,14 @@ const Card = () => {
     };
 
     fetchAPI();
-  }, [setComicData, currentComicNumber]);
+  }, [setComicData, currentComicNumber, randomNumberHandler]);
 
   // Show  spinner  before getting the data
   let content = <Spinner />;
 
   if (comicData) {
     content = (
-      <div className='card'>
+      <div className="card">
         <CardDetail comicData={comicData} createdDate={createdDate} />
 
         <div className="btn-container">
@@ -82,6 +95,8 @@ const Card = () => {
             </Button>
           )}
 
+          <Button to={`/comicnumber/${randomNumber}`}>Random Comic</Button>
+
           {/* Hide the button if the current comic is the last one */}
           {!isLatestComic && (
             <Button
@@ -92,7 +107,7 @@ const Card = () => {
             </Button>
           )}
         </div>
-      </div >
+      </div>
     );
   }
 

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./card-detail.styles.css";
+
 const CardDetail = (props) => {
   // Parse transcript to more readable format
   const transcript = props.comicData.transcript
