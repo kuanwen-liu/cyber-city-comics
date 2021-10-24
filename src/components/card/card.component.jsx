@@ -58,9 +58,7 @@ const Card = () => {
         if (currentComicNumber <= 0) {
           return;
         } else {
-          const response = await fetch(
-            `https://xkcd.com/${currentComicNumber}/info.0.json`
-          );
+          const response = await fetch(`/${currentComicNumber}/info.0.json`);
 
           if (!response.ok) {
             throw Error(response.statusText);

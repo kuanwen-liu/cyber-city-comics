@@ -15,7 +15,7 @@ const App = () => {
   // useCallback to find the latestComic in the API and it only execute once
   const fetchAPIToGetLatestComicNumber = useCallback(async () => {
     try {
-      const latestComicResponse = await fetch(`https://xkcd.com/info.0.json`);
+      const latestComicResponse = await fetch(`/info.0.json`);
       if (!latestComicResponse.ok) {
         throw Error(latestComicResponse.statusText);
       }
