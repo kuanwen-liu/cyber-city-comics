@@ -16,7 +16,7 @@ const Home = (props) => {
     setLatestNumberToCurrentNumber();
   }, [setLatestNumberToCurrentNumber]);
 
-  return <Card data={props.comicData} />;
+  return <Card />;
 };
 
 export default Home;

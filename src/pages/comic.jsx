@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Card from "../components/card/card.component";
 import ComicContext from "../store/comicContext";
 
-const Comic = (props) => {
+const Comic = () => {
   // useParams to get the url parameter
   const paras = useParams();
   const paraNumber = paras.comicnumber;
@@ -21,7 +21,7 @@ const Comic = (props) => {
     setParaNumber();
   }, [setParaNumber]);
 
-  return <Card data={props.comicData} />;
+  return <Card />;
 };
 
 export default Comic;

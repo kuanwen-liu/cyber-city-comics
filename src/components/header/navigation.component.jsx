@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import "./navigation.styles.css";
 
 const Navigation = () => {
+  const closeTheNavigation = () => {
+    document.getElementById("navi-toggle").checked = false;
+  };
+
   return (
     <div className="navigation">
       <input
@@ -19,17 +23,29 @@ const Navigation = () => {
       <nav className="navigation__nav">
         <ul className="navigation__list">
           <li className="navigation__item">
-            <Link to="/" className="navigation__link">
+            <Link
+              to="/"
+              className="navigation__link"
+              onClick={closeTheNavigation}
+            >
               Home
             </Link>
           </li>
           <li className="navigation__item">
-            <Link to="/about" className="navigation__link">
+            <Link
+              to="/about"
+              className="navigation__link"
+              onClick={closeTheNavigation}
+            >
               About Us
             </Link>
           </li>
           <li className="navigation__item">
-            <Link to="/" className="navigation__link">
+            <Link
+              to="/"
+              className="navigation__link"
+              onClick={closeTheNavigation}
+            >
               Contact
             </Link>
           </li>

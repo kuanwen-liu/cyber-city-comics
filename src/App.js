@@ -12,7 +12,7 @@ const App = () => {
   const comicCtx = useContext(ComicContext);
   const { getLatestComicNumber } = comicCtx;
 
-  // useCallback to find the latestComic in the API and it only execute once
+  // useCallback to fetch and find the last comic in the API and it only execute once
   const fetchAPIToGetLatestComicNumber = useCallback(async () => {
     try {
       const latestComicResponse = await fetch(
